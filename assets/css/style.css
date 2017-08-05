@@ -10,15 +10,11 @@
 	z-index: 10000;
 }
 
-
-
-
 .top-bar-left {
 
 	margin-left: 15px;
 	/*position: fixed;*/
 }
-
 
 .orbit-slide {
 
@@ -35,16 +31,30 @@
 	padding-bottom: 100px;
 }
 
-
-
 .orbit-slide2 {
 
 	width: 100%;
-	height: 600px;
-	background-color: red;
+	height: 600px;	background-color: red;
 	
 }
 
 .header-text {
 	margin-top: 100px;
+}
+
+.fertilizerImg {
+	width:200px;
+	height: 200px;
+}
+.waterSoftImg {
+	width:200px;
+	height: 200px;
+}
+.filterImg {
+	width:200px;
+	height: 200px;
+}
+.lightImg {
+	width:200px;
+	height: 200px;
 }
