@@ -6,6 +6,11 @@
     <title>Foundation | Welcome</title>
     <link rel="stylesheet" href="http://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase.js"></script>
+     <!-- Google Sign In -->
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <meta name="google-signin-client_id" content="478137109323-67523o1tnhd0ol9bndqpvf4ojm1kk1i1.apps.googleusercontent.com">
   </head>
   <body>
 
@@ -13,59 +18,59 @@
     <div class="top-bar">
       <div class="top-bar-left">
         <img src="assets/images/hmLogo.png">
-<!--         <ul class="menu">
-          <li class="menu-text">HomeMate</li>
-          <li><a href="#">One</a></li>
-          <li><a href="#">Two</a></li>
-        </ul> -->
       </div>
       <div class="top-bar-right">
         <ul class="menu">
-
-         <li><button class="button" data-open="exampleModal1">Register/Login</button></li>
+          <li><button class="button" data-open="registerModal">Register/Login</button></li>
           <li><a href="#space">Products</a></li>
           <li><a href="#reminders">Reminder</a></li>
-          <!-- <li><a href="#">Six</a></li> -->
-
-          
-
+          <div class="signout"></div>
         </ul>
       </div>
     </div>
     <!-- End Top Bar -->
     
-    <div class="reveal" id="exampleModal1" data-reveal>
+    <div class="reveal" id="registerModal" data-reveal>
       <h1>Register Now!</h1>
-      <form action="/action_page.php">
-        First name:<br>
-        <input type="text" name="firstname">
-        Last name:<br>
-        <input type="text" name="lastname">
-        Email:<br>
-        <input type="email" name="email">
-        Create Password:<br>
-        <input type="password" name="password1">
-        Confirm Password:<br>
-        <input type="password" name="password2">
-        <input type="submit" value="Submit">
-      </form>
+      <div class="form-group">
+        <label for="firstname">First Name</label>
+        <input class="form-control" id="firstname" type="text">
+      </div>
+      <div class="form-group">
+        <label for="lastname">Last Name</label>
+        <input class="form-control" id="lastname" type="text">
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input class="form-control" id="email" type="email">
+      </div>
+      <div class="form-group">
+        <label for="password1">Create Password</label>
+        <input class="form-control" id="password1" type="password">
+      </div>  
+      <div class="form-group">
+        <label for="password2">Confirm Password</label>
+        <input class="form-control" id="password2" type="password">
+      </div>  
+      <button type="button" class="success button " id="submitUser" data-close aria-label="Close reveal">Submit</button>
       <br>
-      <button class="button" data-open="exampleModal2">Already a Member? LogIn</button>
+      <button class="button" data-open="logInModal">Already a Member? LogIn</button>
       <button class="close-button" data-close aria-label="Close reveal" type="button">
         <span aria-hidden="true">&times;</span>
       </button>
     </div>
 
     <!-- This is the nested modal -->
-    <div class="reveal" id="exampleModal2" data-reveal>
+    <div class="reveal" id="logInModal" data-reveal>
       <h2>LogIn Form</h2>
-      <form action="/action_page.php">
-        Email:<br>
-        <input type="email" name="email">
-        Password:<br>
-        <input type="password" name="password">
-        <input type="submit" value="Submit">
-      </form>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input class="form-control" id="email" type="email">
+      </div>
+      <div class="form-group">
+        <label for="password1">Password</label>
+        <input class="form-control" id="password1" type="password">
+      </div>
       <button class="close-button" data-close aria-label="Close reveal" type="button">
         <span aria-hidden="true">&times;</span>
       </button>
@@ -105,25 +110,21 @@
       <div class="column">
         <img class="fertilizerImg" src="assets/images/fertilizer.png">
         <h5>Lawn Fertilizer</h5>
-        <!-- <p>$400</p> -->
         <a href="#" class="button expanded">Shop</a>
       </div>
       <div class="column">
         <img class="waterSoftImg" src="assets/images/waterSoft.png">
-        <h5>Water Softener</h5>
-        <!-- <p>$400</p> -->
+        <h5>Water Softener Salt</h5>
         <a href="#" class="button expanded">Shop</a>
       </div>
       <div class="column">
         <img class="filterImg" src="assets/images/filter.png">
         <h5>Air Filter</h5>
-        <!-- <p>$400</p> -->
         <a href="#" class="button expanded">Shop</a>
       </div>
       <div class="column">
         <img class="lightImg" src="assets/images/light.png">
         <h5>Light Bulbs</h5>
-        <!-- <p>$400</p> -->
         <a href="#" class="button expanded">Shop</a>
       </div>
     </div>
@@ -150,42 +151,37 @@
     <!-- Reminder Section -->
     <div class="row column text-center">
       <h2>Set Up Google Calendar Reminders</h2>
-      <hr>
+      <div class="g-signin2" data-onsuccess="onSignIn">
+        <button class="button" src = "#">button</button>
+      </div>
     </div>
+      <hr>
+
   <!-- Fertilizer Reminder -->
     <div class="work-feature-block row">
       <div class="columns medium-4">
         <img class="fertilizerImg" src="assets/images/fertilizer.png">
       </div>
-      <div class="columns medium-8">
+      <div class="columns medium-4">
         <h4 class="work-feature-block-header">Lawn Fertilizer</h4>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce sodales diam ac hendrerit aliquet. Phasellus pretium libero vel molestie maximus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam quis est quam. Aenean blandit a urna laoreet tincidunt.</p>
-        <h5>Reminder Details</h5>
-        <ul>
-          <li>Item 1</li>
-          <li>Item 2</li>
-          <li>Item 3</li>
-          <li>Item 4</li>
-        </ul>
+        <div class="g-signin2" data-onsuccess="onSignIn"></div>
+      </div>
+      <div class="columns medium-4">
+        <p>calendar</p>
       </div>
     </div>
-
     <hr>
   <!-- Water Softner Reminder -->
     <div class="work-feature-block row">
       <div class="columns medium-4">
         <img class="waterSoftImg" src="assets/images/waterSoft.png">
       </div>
-      <div class="columns medium-8">
+      <div class="columns medium-4">
         <h4 class="work-feature-block-header">Water Softener Salt</h4>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce sodales diam ac hendrerit aliquet. Phasellus pretium libero vel molestie maximus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam quis est quam. Aenean blandit a urna laoreet tincidunt.</p>
-        <h5>Reminder Details</h5>
-        <ul>
-          <li>Item 1</li>
-          <li>Item 2</li>
-          <li>Item 3</li>
-          <li>Item 4</li>
-        </ul>
+        <a href = "#">Login in to Google Calender</a>
+      </div>
+      <div class="columns medium-4">
+        <p>calendar</p>
       </div>
     </div>
     <hr>
@@ -194,16 +190,12 @@
       <div class="columns medium-4">
         <img class="filterImg" src="assets/images/filter.png">
       </div>
-      <div class="columns medium-8">
+      <div class="columns medium-4">
         <h4 class="work-feature-block-header">Furnace Air Filter</h4>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce sodales diam ac hendrerit aliquet. Phasellus pretium libero vel molestie maximus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam quis est quam. Aenean blandit a urna laoreet tincidunt.</p>
-        <h5>Reminder Details</h5>
-        <ul>
-          <li>Item 1</li>
-          <li>Item 2</li>
-          <li>Item 3</li>
-          <li>Item 4</li>
-        </ul>
+        <a href = "#">Login in to Google Calender</a>
+      </div>
+      <div class="columns medium-4">
+        <p>calendar</p>
       </div>
     </div>
     <hr>
@@ -212,16 +204,12 @@
       <div class="columns medium-4">
         <img class="lightImg" src="assets/images/light.png">
       </div>
-      <div class="columns medium-8">
+      <div class="columns medium-4">
         <h4 class="work-feature-block-header">Order Lightbulbs</h4>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce sodales diam ac hendrerit aliquet. Phasellus pretium libero vel molestie maximus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam quis est quam. Aenean blandit a urna laoreet tincidunt.</p>
-        <h5>Reminder Details</h5>
-        <ul>
-          <li>Item 1</li>
-          <li>Item 2</li>
-          <li>Item 3</li>
-          <li>Item 4</li>
-        </ul>
+        <a href = "#">Login in to Google Calender</a>
+      </div>
+      <div class="columns medium-4">
+        <p>calendar</p>
       </div>
     </div>
     <hr>
@@ -230,16 +218,12 @@
       <div class="columns medium-4">
         <img class="lightImg" src="assets/images/light.png">
       </div>
-      <div class="columns medium-8">
+      <div class="columns medium-4">
         <h4 class="work-feature-block-header">Add New Reminder</h4>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce sodales diam ac hendrerit aliquet. Phasellus pretium libero vel molestie maximus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam quis est quam. Aenean blandit a urna laoreet tincidunt.</p>
-        <h5>Reminder Details</h5>
-        <ul>
-          <li>Item 1</li>
-          <li>Item 2</li>
-          <li>Item 3</li>
-          <li>Item 4</li>
-        </ul>
+        <a href = "#">Login in to Google Calender</a>
+      </div>
+      <div class="columns medium-4">
+        <p>calendar</p>
       </div>
     </div>
     <br>
@@ -248,7 +232,7 @@
       <br>
       <br>
       <p class = "contactUs">Contact Us</p>
-
+    <script src="assets/javascript/api.js"></script>
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
     <script src="http://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.js"></script>
     <script src="js/vendor/jquery.js"></script>
