@@ -6,6 +6,8 @@
     <title>Foundation | Welcome</title>
     <link rel="stylesheet" href="http://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase.js"></script>
   </head>
   <body>
 
@@ -13,59 +15,59 @@
     <div class="top-bar">
       <div class="top-bar-left">
         <img src="assets/images/hmLogo.png">
-<!--         <ul class="menu">
-          <li class="menu-text">HomeMate</li>
-          <li><a href="#">One</a></li>
-          <li><a href="#">Two</a></li>
-        </ul> -->
       </div>
       <div class="top-bar-right">
         <ul class="menu">
-
-         <li><button class="button" data-open="exampleModal1">Register/Login</button></li>
+          <li><button class="button" data-open="registerModal">Register/Login</button></li>
           <li><a href="#newProducts">Products</a></li>
           <li><a href="#reminders">Reminder</a></li>
-          <!-- <li><a href="#">Six</a></li> -->
-
-          
-
+          <div class="signout"></div>
         </ul>
       </div>
     </div>
     <!-- End Top Bar -->
     
-    <div class="reveal" id="exampleModal1" data-reveal>
+    <div class="reveal" id="registerModal" data-reveal>
       <h1>Register Now!</h1>
-      <form action="/action_page.php">
-        First name:<br>
-        <input type="text" name="firstname">
-        Last name:<br>
-        <input type="text" name="lastname">
-        Email:<br>
-        <input type="email" name="email">
-        Create Password:<br>
-        <input type="password" name="password1">
-        Confirm Password:<br>
-        <input type="password" name="password2">
-        <input type="submit" value="Submit">
-      </form>
+      <div class="form-group">
+        <label for="firstname">First Name</label>
+        <input class="form-control" id="firstname" type="text">
+      </div>
+      <div class="form-group">
+        <label for="lastname">Last Name</label>
+        <input class="form-control" id="lastname" type="text">
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input class="form-control" id="email" type="email">
+      </div>
+      <div class="form-group">
+        <label for="password1">Create Password</label>
+        <input class="form-control" id="password1" type="password">
+      </div>  
+      <div class="form-group">
+        <label for="password2">Confirm Password</label>
+        <input class="form-control" id="password2" type="password">
+      </div>  
+      <button type="button" class="success button " id="submitUser" data-close aria-label="Close reveal">Submit</button>
       <br>
-      <button class="button" data-open="exampleModal2">Already a Member? LogIn</button>
+      <button class="button" data-open="logInModal">Already a Member? LogIn</button>
       <button class="close-button" data-close aria-label="Close reveal" type="button">
         <span aria-hidden="true">&times;</span>
       </button>
     </div>
 
     <!-- This is the nested modal -->
-    <div class="reveal" id="exampleModal2" data-reveal>
+    <div class="reveal" id="logInModal" data-reveal>
       <h2>LogIn Form</h2>
-      <form action="/action_page.php">
-        Email:<br>
-        <input type="email" name="email">
-        Password:<br>
-        <input type="password" name="password">
-        <input type="submit" value="Submit">
-      </form>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input class="form-control" id="email" type="email">
+      </div>
+      <div class="form-group">
+        <label for="password1">Password</label>
+        <input class="form-control" id="password1" type="password">
+      </div>
       <button class="close-button" data-close aria-label="Close reveal" type="button">
         <span aria-hidden="true">&times;</span>
       </button>
@@ -242,7 +244,7 @@
       <br>
       <br>
       <p class = "contactUs">Contact Us</p>
-
+    <script src="assets/javascript/api.js"></script>
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
     <script src="http://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.js"></script>
     <script>
