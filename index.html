@@ -8,6 +8,9 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
     <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase.js"></script>
+     <!-- Google Sign In -->
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <meta name="google-signin-client_id" content="478137109323-67523o1tnhd0ol9bndqpvf4ojm1kk1i1.apps.googleusercontent.com">
   </head>
   <body>
 
@@ -103,25 +106,21 @@
       <div class="column">
         <img class="fertilizerImg" src="assets/images/fertilizer.png">
         <h5>Lawn Fertilizer</h5>
-        <!-- <p>$400</p> -->
         <a href="#" class="button expanded">Shop</a>
       </div>
       <div class="column">
         <img class="waterSoftImg" src="assets/images/waterSoft.png">
-        <h5>Water Softener</h5>
-        <!-- <p>$400</p> -->
+        <h5>Water Softener Salt</h5>
         <a href="#" class="button expanded">Shop</a>
       </div>
       <div class="column">
         <img class="filterImg" src="assets/images/filter.png">
         <h5>Air Filter</h5>
-        <!-- <p>$400</p> -->
         <a href="#" class="button expanded">Shop</a>
       </div>
       <div class="column">
         <img class="lightImg" src="assets/images/light.png">
         <h5>Light Bulbs</h5>
-        <!-- <p>$400</p> -->
         <a href="#" class="button expanded">Shop</a>
       </div>
     </div>
@@ -146,42 +145,37 @@
     <!-- Reminder Section -->
     <div class="row column text-center">
       <h2>Set Up Google Calendar Reminders</h2>
-      <hr>
+      <div class="g-signin2" data-onsuccess="onSignIn">
+        <button class="button" src = "#">button</button>
+      </div>
     </div>
+      <hr>
+
   <!-- Fertilizer Reminder -->
     <div class="work-feature-block row">
       <div class="columns medium-4">
         <img class="fertilizerImg" src="assets/images/fertilizer.png">
       </div>
-      <div class="columns medium-8">
+      <div class="columns medium-4">
         <h4 class="work-feature-block-header">Lawn Fertilizer</h4>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce sodales diam ac hendrerit aliquet. Phasellus pretium libero vel molestie maximus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam quis est quam. Aenean blandit a urna laoreet tincidunt.</p>
-        <h5>Reminder Details</h5>
-        <ul>
-          <li>Item 1</li>
-          <li>Item 2</li>
-          <li>Item 3</li>
-          <li>Item 4</li>
-        </ul>
+        <div class="g-signin2" data-onsuccess="onSignIn"></div>
+      </div>
+      <div class="columns medium-4">
+        <p>calendar</p>
       </div>
     </div>
-
     <hr>
   <!-- Water Softner Reminder -->
     <div class="work-feature-block row">
       <div class="columns medium-4">
         <img class="waterSoftImg" src="assets/images/waterSoft.png">
       </div>
-      <div class="columns medium-8">
+      <div class="columns medium-4">
         <h4 class="work-feature-block-header">Water Softener Salt</h4>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce sodales diam ac hendrerit aliquet. Phasellus pretium libero vel molestie maximus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam quis est quam. Aenean blandit a urna laoreet tincidunt.</p>
-        <h5>Reminder Details</h5>
-        <ul>
-          <li>Item 1</li>
-          <li>Item 2</li>
-          <li>Item 3</li>
-          <li>Item 4</li>
-        </ul>
+        <a href = "#">Login in to Google Calender</a>
+      </div>
+      <div class="columns medium-4">
+        <p>calendar</p>
       </div>
     </div>
     <hr>
@@ -190,16 +184,12 @@
       <div class="columns medium-4">
         <img class="filterImg" src="assets/images/filter.png">
       </div>
-      <div class="columns medium-8">
+      <div class="columns medium-4">
         <h4 class="work-feature-block-header">Furnace Air Filter</h4>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce sodales diam ac hendrerit aliquet. Phasellus pretium libero vel molestie maximus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam quis est quam. Aenean blandit a urna laoreet tincidunt.</p>
-        <h5>Reminder Details</h5>
-        <ul>
-          <li>Item 1</li>
-          <li>Item 2</li>
-          <li>Item 3</li>
-          <li>Item 4</li>
-        </ul>
+        <a href = "#">Login in to Google Calender</a>
+      </div>
+      <div class="columns medium-4">
+        <p>calendar</p>
       </div>
     </div>
     <hr>
@@ -208,16 +198,12 @@
       <div class="columns medium-4">
         <img class="lightImg" src="assets/images/light.png">
       </div>
-      <div class="columns medium-8">
+      <div class="columns medium-4">
         <h4 class="work-feature-block-header">Order Lightbulbs</h4>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce sodales diam ac hendrerit aliquet. Phasellus pretium libero vel molestie maximus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam quis est quam. Aenean blandit a urna laoreet tincidunt.</p>
-        <h5>Reminder Details</h5>
-        <ul>
-          <li>Item 1</li>
-          <li>Item 2</li>
-          <li>Item 3</li>
-          <li>Item 4</li>
-        </ul>
+        <a href = "#">Login in to Google Calender</a>
+      </div>
+      <div class="columns medium-4">
+        <p>calendar</p>
       </div>
     </div>
     <hr>
@@ -226,16 +212,12 @@
       <div class="columns medium-4">
         <img class="lightImg" src="assets/images/light.png">
       </div>
-      <div class="columns medium-8">
+      <div class="columns medium-4">
         <h4 class="work-feature-block-header">Add New Reminder</h4>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce sodales diam ac hendrerit aliquet. Phasellus pretium libero vel molestie maximus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam quis est quam. Aenean blandit a urna laoreet tincidunt.</p>
-        <h5>Reminder Details</h5>
-        <ul>
-          <li>Item 1</li>
-          <li>Item 2</li>
-          <li>Item 3</li>
-          <li>Item 4</li>
-        </ul>
+        <a href = "#">Login in to Google Calender</a>
+      </div>
+      <div class="columns medium-4">
+        <p>calendar</p>
       </div>
     </div>
     <br>

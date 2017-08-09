@@ -37,3 +37,20 @@ $("#registerModal.reveal").on("click", "#submitUser", function(event) {
 if (currentUser != null) {
   $("#signout").html('<li><button class="button" data-open="registerModal">Sign Out</button></li>');
 }
+
+//google sign in
+$('.login').on('click', function() {
+  event.preventDefault();
+  var clientId = '478137109323-67523o1tnhd0ol9bndqpvf4ojm1kk1i1.apps.googleusercontent.com';
+  var apiKey = 'AIzaSyDBAdHjSdgGLClbiEGBdS2Xcp6Yx27WJPk';
+  var queryURL = 'https://www.googleapis.com/auth/calendar';
+  
+    $.ajax({
+      url: queryURL,
+      method: "GET"
+    })
+    .done(function(response) {
+
+      var googleLogin = response.data
+    });
+});
