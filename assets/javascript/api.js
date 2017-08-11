@@ -1,5 +1,5 @@
-var currentUser;
 var userName;
+var user;
 var config = {
   apiKey: "AIzaSyDBAdHjSdgGLClbiEGBdS2Xcp6Yx27WJPk",
   authDomain: "homemate-94bde.firebaseapp.com",
@@ -13,14 +13,45 @@ firebase.initializeApp(config);
 
 var userData = firebase.database().ref();
 
-//gets info from register and enter to firebase
+//LogInUser
+$("#logInModal.reveal").on("click", "#logInUser", function(event) {
+  const email = $("#logInEmail").val().trim();
+  const password = $("#password").val().trim();
+  const auth = firebase.auth();
+  auth.signInWithEmailAndPassword(email, password).catch(function(error) {
+    var errorCode = error.code;
+    var errorMessage = error.message;
+    if (errorMessage) {
+      $("#logInModal.reveal .errorMessage").html("<p>" + errorMessage + "</p>");
+    }
+    $('#logInModal.reveal').foundation('open');
+  });
+  $('#logInModal.reveal').foundation('close');
+});
+
+//Register a new user
 $("#registerModal.reveal").on("click", "#submitUser", function(event) {
-  console.log('test');
-  var firstName = $("#firstname").val().trim();
-  var lastName = $("#lastname").val().trim();
-  var email = $("#email").val().trim();
-  var password1 = $("#password1").val().trim();
-  var password2 = $("#password2").val().trim();
+  const firstName = $("#firstname").val().trim();
+  const lastName = $("#lastname").val().trim();
+  const email = $("#email").val().trim();
+  const password1 = $("#password1").val().trim();
+  const password2 = $("#password2").val().trim();
+
+  if (password1 != password2) {
+    $("#registerModal.reveal .errorMessage").html("<p>Passwords did not match</p>");
+    $('#registerModal.reveal').foundation('open');
+    return;
+  }
+
+  userName = firstName;
+
+  const auth = firebase.auth();
+  auth.createUserWithEmailAndPassword(email, password1).catch(function(error) {
+    // Handle Errors here.
+    var errorCode = error.code;
+    var errorMessage = error.message;
+    // ...
+  });
 
   var newUserRef = userData.push();
   newUserRef.set({
@@ -30,13 +61,38 @@ $("#registerModal.reveal").on("click", "#submitUser", function(event) {
     email: email,
     password: password1
   });
-  currentUser = firstName;
-  $('.close-reveal-modal').click();
 });
 
-if (currentUser != null) {
-  $("#signout").html('<li><button class="button" data-open="registerModal">Sign Out</button></li>');
-}
+
+$("#logOutModal.reveal").on("click", "#logOutUser", function(event) {
+  console.log('here');
+  firebase.auth().signOut();
+});
+
+firebase.auth().onAuthStateChanged(function(user) {
+  if (user) {
+    user.updateProfile({
+      displayName: userName,
+    }).then(function() {
+      // Update successful.
+    }).catch(function(error) {
+      // An error happened.
+    });
+    console.log(user.displayName);
+    console.log(user);
+    $('.menu .signInBtn').removeClass('button');
+    $('.menu .signInBtn').removeAttr('data-open');
+    $('.menu .signOutBtn').removeClass('hide');
+    $('.menu .signInBtn').text("Hello " + user.displayName);
+  }
+  else {
+    console.log("no one signed in");
+    $('.menu .signInBtn').addClass('button');
+    $('.menu .signInBtn').text("Register/LogIn");
+    $('.menu .signInBtn').attr('data-open', 'registerModal');
+    $('.menu .signOutBtn').addClass('hide');
+  }
+});
 
 //google sign in
 $('.login').on('click', function() {
