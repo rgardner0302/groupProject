@@ -21,10 +21,10 @@
       </div>
       <div class="top-bar-right">
         <ul class="menu">
-          <li><button class="button" data-open="registerModal">Register/Login</button></li>
+          <li><button class="button signInBtn" data-open="registerModal">Register/Login</button></li>
           <li><a href="#newProducts">Products</a></li>
           <li><a href="#reminders">Reminder</a></li>
-          <div class="signout"></div>
+          <li><button class="button hide signOutBtn" data-open="logOutModal">SignOut</button></li>
         </ul>
       </div>
     </div>
@@ -58,6 +58,7 @@
       <button class="close-button" data-close aria-label="Close reveal" type="button">
         <span aria-hidden="true">&times;</span>
       </button>
+      <div class="errorMessage"></div>
     </div>
 
     <!-- This is the nested modal -->
@@ -65,12 +66,22 @@
       <h2>LogIn Form</h2>
       <div class="form-group">
         <label for="email">Email</label>
-        <input class="form-control" id="email" type="email">
+        <input class="form-control" id="logInEmail" type="email">
       </div>
       <div class="form-group">
-        <label for="password1">Password</label>
-        <input class="form-control" id="password1" type="password">
+        <label for="password">Password</label>
+        <input class="form-control" id="password" type="password">
       </div>
+      <button type="button" class="success button " id="logInUser" aria-label="Close reveal">LogIn</button>
+      <button class="close-button" data-close aria-label="Close reveal" type="button">
+        <span aria-hidden="true">&times;</span>
+      </button>
+      <div class="errorMessage"></div>
+    </div>
+
+    <div class="reveal" id="logOutModal" data-reveal>
+      <h2>Are You Sure You Want to Log Out?</h2>
+      <button type="button" class="alert button" id="logOutUser" data-close aria-label="Close reveal">Yes</button>
       <button class="close-button" data-close aria-label="Close reveal" type="button">
         <span aria-hidden="true">&times;</span>
       </button>
