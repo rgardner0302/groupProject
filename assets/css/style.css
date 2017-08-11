@@ -18,28 +18,43 @@
 	/*position: fixed;*/
 }
 
-.orbit-slide {
+.orbit {
 
 	width: 100%;
 	height: 600px;
 	display: block;
-	background-image: url("../images/homePic.svg");
+	/*background-image: url("../images/homePic.svg");
 	background-repeat: no-repeat;
-	background-size: cover;
+	background-size: cover;*/
 
 	z-index: 2;
 	position: relative;
 	margin-top: 113px;
-	/*margin-bottom: 100px;*/
 	padding-bottom: 100px;
 }
 
-.orbit-slide2 {
+/*.orbit-slide2 {
 
 	width: 100%;
 	height: 600px;	background-color: blue;
 	
+}*/
+
+#Products:before {
+  display: block;
+  content: " ";
+  margin-top: -75px;
+  height: 75px;
+  visibility: hidden; 
 }
+
+#reminders:before {
+  display: block;
+  content: " ";
+  margin-top: -75px;
+  height: 75px;
+  visibility: hidden;
+ }
 
 .hello {
 
