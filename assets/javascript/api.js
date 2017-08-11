@@ -1,12 +1,5 @@
-<<<<<<< HEAD
-$(document).foundation();
-var elem = new Foundation.Orbit($(".orbit"), {});
-
 var currentUser;
 
-
-=======
->>>>>>> master
 var userName;
 var user;
 var config = {
@@ -119,7 +112,3 @@ $('.login').on('click', function() {
       var googleLogin = response.data
     });
 });
-<<<<<<< HEAD
-
-=======
->>>>>>> master
