@@ -1,3 +1,7 @@
+
+$(document).foundation();
+var elem = new Foundation.Orbit($(".orbit"), {});
+
 var currentUser;
 var userName;
 var config = {
