@@ -1,5 +1,3 @@
-
-
 $(document).foundation();
 var elem = new Foundation.Orbit($(".orbit"), {});
 
