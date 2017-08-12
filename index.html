@@ -127,7 +127,6 @@
 
     <hr>
 
-
 <!-- Amazon API container below -->
     <div class="row column">
       <div class="callout primary">
@@ -137,87 +136,135 @@
   <a name="reminders"></a>
     <hr>
     
-
-
-
-
 <!-- Zoe Starts -->
     <!-- Reminder Section -->
     <div class="row column text-center">
-      <h2>Set Up Google Calendar Reminders</h2>
-      <div class="g-signin2" data-onsuccess="onSignIn">
-        <button class="button" src = "#">button</button>
-      </div>
-    </div>
+      <h4>Sign In To Your Google Account</h4> 
+      <h4>to Set Up Calendar Reminders</h4>
+      <br>
+      <div class="g-signin2" data-onsuccess="onSignIn" data-theme = "dark"></div>
+      <!-- sign out of google -->
+      <br>
+      <a href="#" onclick="signOut();">Sign out</a>
+    </div> 
       <hr>
-
   <!-- Fertilizer Reminder -->
     <div class="work-feature-block row">
-      <div class="columns medium-4">
+      <div class="columns medium-3">
         <img class="fertilizerImg" src="assets/images/fertilizer.png">
       </div>
-      <div class="columns medium-4">
+      <div class="columns medium-6">
         <h4 class="work-feature-block-header">Lawn Fertilizer</h4>
-        <div class="g-signin2" data-onsuccess="onSignIn"></div>
+        <form class="fertilizer-reminder">
+          <input type="date" placeholder="MMDDYY" class = "date-input">
+          <p>Start Time for Reminder</p>
+          <input type="time" placeholder="hh:mm" class = "start-time-input">
+          <p>End Time for Reminder</p>
+          <input type="time" placeholder="hh:mm" class = "end-time-input">
+          <input type="text" placeholder= "Enter Your Reminder for Fertilizer" class = "remember-input">
+          <div class="fertilizer-reminder-form-actions">
+            <input type="submit" class="remind" value="Add Reminder"/>
+          </div>
+        </form>
       </div>
-      <div class="columns medium-4">
-        <p>calendar</p>
+      <div class="columns medium-3">
+        <img class="googleCalendar" src="assets/images/google_on_color_large.png">
       </div>
     </div>
     <hr>
   <!-- Water Softner Reminder -->
     <div class="work-feature-block row">
-      <div class="columns medium-4">
+      <div class="columns medium-3">
         <img class="waterSoftImg" src="assets/images/waterSoft.png">
       </div>
-      <div class="columns medium-4">
+      <div class="columns medium-6">
         <h4 class="work-feature-block-header">Water Softener Salt</h4>
-        <a href = "#">Login in to Google Calender</a>
+        <form class="softener-reminder">
+          <input type="date" placeholder="MMDDYY" class = "date-input">
+          <p>Start Time for Reminder</p>
+          <input type="time" placeholder="hh:mm" class = "start-time-input">
+          <p>End Time for Reminder</p>
+          <input type="time" placeholder="hh:mm" class = "end-time-input">
+          <input type="text" placeholder= "Enter Your Reminder for Water Softener Salt" class = "remember-input">
+          <div class="softener-reminder-form-actions">
+            <input type="submit" class="remind" value="Add Reminder"/>
+          </div>
+        </form>
       </div>
-      <div class="columns medium-4">
-        <p>calendar</p>
+      <div class="columns medium-3">
+        <img class="googleCalendar" src="assets/images/google_on_color_large.png">
       </div>
     </div>
     <hr>
     <!-- Air Filter Reminder -->
     <div class="work-feature-block row">
-      <div class="columns medium-4">
+      <div class="columns medium-3">
         <img class="filterImg" src="assets/images/filter.png">
       </div>
-      <div class="columns medium-4">
+      <div class="columns medium-6">
         <h4 class="work-feature-block-header">Furnace Air Filter</h4>
-        <a href = "#">Login in to Google Calender</a>
+        <form class="filter-reminder">
+          <input type="date" placeholder="MMDDYY" class = "date-input">
+          <p>Start Time for Reminder</p>
+          <input type="time" placeholder="hh:mm" class = "start-time-input">
+          <p>End Time for Reminder</p>
+          <input type="time" placeholder="hh:mm" class = "end-time-input">
+          <input type="text" placeholder= "Enter Your Reminder to Change Your Air Filter" class = "remember-input">
+          <div class="filter-reminder-form-actions">
+            <input type="submit" class="remind" value="Add Reminder"/>
+          </div>
+        </form>
       </div>
-      <div class="columns medium-4">
-        <p>calendar</p>
+      <div class="columns medium-3">
+        <img class="googleCalendar" src="assets/images/google_on_color_large.png">
       </div>
     </div>
     <hr>
     <!-- Lightbulb Reminder -->
     <div class="work-feature-block row">
-      <div class="columns medium-4">
+      <div class="columns medium-3">
         <img class="lightImg" src="assets/images/light.png">
       </div>
-      <div class="columns medium-4">
+      <div class="columns medium-6">
         <h4 class="work-feature-block-header">Order Lightbulbs</h4>
-        <a href = "#">Login in to Google Calender</a>
+        <form class="lightbulb-reminder">
+          <input type="date" placeholder="MMDDYY" class = "date-input">
+          <p>Start Time for Reminder</p>
+          <input type="time" placeholder="hh:mm" class = "start-time-input">
+          <p>End Time for Reminder</p>
+          <input type="time" placeholder="hh:mm" class = "end-time-input">
+          <input type="text" placeholder= "Enter Your Reminder to Order More Lightbulbs" class = "remember-input">
+          <div class="lightbulb-reminder-form-actions">
+            <input type="submit" class="remind" value="Add Reminder"/>
+          </div>
+        </form>
       </div>
-      <div class="columns medium-4">
-        <p>calendar</p>
+      <div class="columns medium-3">
+        <img class="googleCalendar" src="assets/images/google_on_color_large.png">
       </div>
     </div>
     <hr>
     <!-- Add Another Reminder -->
     <div class="work-feature-block row">
-      <div class="columns medium-4">
-        <img class="lightImg" src="assets/images/light.png">
+      <div class="columns medium-3">
+        <img class="lightImg" src="assets/images/addReminder.png">
       </div>
-      <div class="columns medium-4">
+      <div class="columns medium-6">
         <h4 class="work-feature-block-header">Add New Reminder</h4>
-        <a href = "#">Login in to Google Calender</a>
+        <form class="newRemind-reminder">
+          <input type="date" placeholder="MMDDYY" class = "date-input">
+          <p>Start Time for Reminder</p>
+          <input type="time" placeholder="hh:mm" class = "start-time-input">
+          <p>End Time for Reminder</p>
+          <input type="time" placeholder="hh:mm" class = "end-time-input">
+          <input type="text" placeholder= "Type Your New Reminder" class = "remember-input">
+          <div class="newRemind-reminder-form-actions">
+            <input type="submit" class="remind" value="Add Reminder"/>
+          </div>
+        </form>
       </div>
-      <div class="columns medium-4">
-        <p>calendar</p>
+      <div class="columns medium-3">
+        <img class="googleCalendar" src="assets/images/google_on_color_large.png">
       </div>
     </div>
     <br>
@@ -225,12 +272,16 @@
       <img class = "logo" src = "assets/images/hmLogo.png">
       <br>
       <br>
-      <p class = "contactUs">Contact Us</p>
+      <p class = "contactUs">Contact Us...on the backrow</p>
     <script src="assets/javascript/api.js"></script>
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
     <script src="http://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.js"></script>
     <script>
       $(document).foundation();
     </script>
+    <!-- <script async defer src="https://apis.google.com/js/api.js" 
+      onload="this.onload=function(){};handleClientLoad()" 
+      onreadystatechange="if (this.readyState === 'complete') this.onload()">
+    </script> -->
   </body>
 </html>
