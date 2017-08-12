@@ -82,3 +82,14 @@
 	width:200px;
 	height: 200px;
 }
+
+.googleCalendar {
+	width: 200px;
+	height: 170px;
+	padding-left: 50px;
+}
+
+.g-signin2 {
+	margin: 0 auto;
+	padding-left: 515px;
+}
